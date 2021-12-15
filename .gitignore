@@ -1,0 +1,6 @@
+# dotenv environment variable files
+.env*
+
+/node_modules
+
+.DS_Store
