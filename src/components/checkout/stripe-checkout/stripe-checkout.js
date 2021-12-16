@@ -162,9 +162,9 @@ const StripeCheckout = () => {
         },
       })
       const { sessionId } = response
-      const { error } = await stripe?.redirectToCheckout({
-        sessionId,
-      })
+      // const { error } = await stripe?.redirectToCheckout({
+      //   sessionId,
+      // })
 
       if (error) {
         setErrorMessage(error.message)
