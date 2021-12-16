@@ -10,5 +10,5 @@ export const BOOKINGS = "bookings"
 export const FREE_SHIPPING_AMOUNT = 200
 export const CURRENCY = "cad"
 
-// export const HTTPS_LINK = "https://www.bandgluxuryempire.com"
-export const HTTPS_LINK = "http://localhost:8888"
+export const HTTPS_LINK = "https://www.bandgluxuryempire.com"
+// export const HTTPS_LINK = "http://localhost:8888"
