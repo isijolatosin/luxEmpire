@@ -85,7 +85,7 @@ const StripeCheckout = () => {
   }
 
   // Proceed function
-  const redirectToCheckout = async e => {
+  const StripeRedirectToCheckout = async e => {
     e.preventDefault()
     if (allowproceed) {
       // line items
@@ -162,7 +162,7 @@ const StripeCheckout = () => {
         },
       })
       const { sessionId } = response
-      const { error } = await stripe.redirectToCheckout({
+      const { error } = await stripe?.redirectToCheckout({
         sessionId,
       })
 
@@ -173,7 +173,7 @@ const StripeCheckout = () => {
   }
 
   return (
-    <form onSubmit={redirectToCheckout}>
+    <form onSubmit={StripeRedirectToCheckout}>
       <div className="shipping-add-header">
         <div className="ship-head">
           <p>Shipping - Cost</p>
