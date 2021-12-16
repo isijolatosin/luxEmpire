@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { useStripe } from "@stripe/react-stripe-js"
+// import { useStripe } from "@stripe/react-stripe-js"
 import { fetchFromAPI } from "../../utils/helpers"
 import {
   clearCartItem,
@@ -18,7 +18,7 @@ import {
 
 const StripeCheckout = () => {
   const cartItems = useSelector(selectCartItems)
-  const stripe = useStripe()
+  // const stripe = useStripe()
   const [email, setEmail] = React.useState("")
   const [errorMessage, setErrorMessage] = React.useState(null)
   const [allowproceed, setAllowProceed] = React.useState(false) //CHANGE BACK TO FALSE
@@ -162,9 +162,9 @@ const StripeCheckout = () => {
         },
       })
       const { sessionId } = response
-      // const { error } = await stripe?.redirectToCheckout({
-      //   sessionId,
-      // })
+      const { error } = await stripe?.redirectToCheckout({
+        sessionId,
+      })
 
       if (error) {
         setErrorMessage(error.message)
