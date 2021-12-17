@@ -100,7 +100,7 @@ const StripeCheckout = () => {
             currency: CURRENCY,
             unit_amount: price * 100, //amount is in center
             product_data: {
-              name: item.title,
+              name: `${item.title} - (Estimated GST/HST: 13%)`,
               description: description,
             },
           },
