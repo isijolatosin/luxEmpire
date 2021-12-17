@@ -4,7 +4,7 @@ import { db } from "../../firebase"
 import { AuthContext } from "../context/auth"
 import { MdOutlineKeyboardArrowUp } from "react-icons/md"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md"
-import { AUTHORIZED_ID } from "../../const"
+import { AUTHORIZED_ID_1, AUTHORIZED_ID_2, AUTHORIZED_ID_3 } from "../../const"
 import { Link } from "gatsby"
 
 const Admin = () => {
@@ -97,7 +97,9 @@ const Admin = () => {
   return (
     <div>
       <Layout>
-        {user?.email === AUTHORIZED_ID ? (
+        {user?.email === AUTHORIZED_ID_1 ||
+        AUTHORIZED_ID_2 ||
+        AUTHORIZED_ID_3 ? (
           <main className="history-page">
             {shippingInfo?.shippingHeader?.length === 0 &&
             shippingInfo?.shippingHeader?.length === 0 ? (

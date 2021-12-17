@@ -1529,6 +1529,7 @@ form > *:last-child {
   height: 15rem;
   width: 15rem;
   border-radius: var(--borderRadius2);
+  border: 1px solid var(--grey-300);
 }
 
 /*#########*/

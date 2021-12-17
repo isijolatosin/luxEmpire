@@ -14,6 +14,7 @@ import {
   FREE_SHIPPING_AMOUNT,
   SHIPPING_COST,
   CURRENCY,
+  TAX_PERCENT,
 } from "../../../../const"
 
 const StripeCheckout = () => {
@@ -90,12 +91,14 @@ const StripeCheckout = () => {
     if (allowproceed) {
       // line items
       const line_items = cartItems.map(item => {
+        const taxCal = item.price * TAX_PERCENT
+        const price = item.price + taxCal
         const description = `${item.description.substring(0, 200)}...`
         return {
           quantity: item.quantity,
           price_data: {
             currency: CURRENCY,
-            unit_amount: item.price * 100, //amount is in center
+            unit_amount: price * 100, //amount is in center
             product_data: {
               name: item.title,
               description: description,
