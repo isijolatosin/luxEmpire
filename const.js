@@ -2,9 +2,9 @@ export const AUTHORIZED_ID_1 = "isijolatosin2210@gmail.com"
 export const AUTHORIZED_ID_2 = "bandgluxuryinternal@gmail.com"
 export const AUTHORIZED_ID_3 = "bandgluxuryinternal@gmail.com"
 export const SHIPPING_COST = {
-  canada: 50,
-  usa: 100,
-  london: 100,
+  canada: 6.99,
+  usa: 20.99,
+  london: 20.99,
 }
 export const CANADA = "canada"
 export const USERS = "users"

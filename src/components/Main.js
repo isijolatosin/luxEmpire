@@ -16,7 +16,7 @@ export default function Home() {
         />
         <div className="hero-container"></div>
         <div className="hero-text">
-          <span>Glow your face & vitality with our best service</span>
+          <span>Glow your face & vitality with our best services</span>
           <h4>
             We provide beauty and treatment services with best quality, believe
             us.

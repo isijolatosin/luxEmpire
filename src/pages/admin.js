@@ -33,7 +33,7 @@ const Admin = () => {
     user &&
       db
         .collection("admin")
-        .doc(`${AUTHORIZED_ID}/`)
+        .doc(`${AUTHORIZED_ID_1}/`)
         .collection("all-purchased")
         .orderBy("title", "asc")
         .onSnapshot(snapshot => {
@@ -78,7 +78,7 @@ const Admin = () => {
 
   const hideShipped = id => {
     db.collection("admin")
-      .doc(`${AUTHORIZED_ID}/`)
+      .doc(`${AUTHORIZED_ID_1}/`)
       .collection("all-purchased")
       .onSnapshot(snapshot => {
         snapshot.docs.map(
@@ -86,7 +86,7 @@ const Admin = () => {
             doc.data().id === id &&
             db
               .collection("admin")
-              .doc(`${AUTHORIZED_ID}/`)
+              .doc(`${AUTHORIZED_ID_1}/`)
               .collection("all-purchased")
               .doc(doc.id)
               .delete()
