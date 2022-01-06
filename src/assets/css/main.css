@@ -2568,8 +2568,8 @@ form > *:last-child {
 .success-page h1,
 .canceled-page h1 {
   font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--black);
+  font-weight: 200;
+  color: var(--grey-600);
 }
 .success-page button,
 .canceled-page button {
@@ -2580,6 +2580,10 @@ form > *:last-child {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 400;
+}
+.success-page span,
+.canceled-page span {
+  color: var(--grey-600);
 }
 
 /*#########*/
