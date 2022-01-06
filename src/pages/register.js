@@ -124,7 +124,7 @@ const Register = () => {
           </article>
           <div className="register">
             <p>
-              Already have an account with us?{" "}
+              Already have an account with us?
               <Link to="/">
                 <button>Login</button>
               </Link>{" "}

@@ -94,7 +94,7 @@ const DynamicPage = ({ data: { contentfulRecipe } }) => {
               <p>{description}</p>
 
               <div className="product-icons">
-                <article>
+                {/* <article>
                   <BsClock />
                   <h5>Prep time</h5>
                   <p>{prepTime} mins</p>
@@ -103,7 +103,7 @@ const DynamicPage = ({ data: { contentfulRecipe } }) => {
                   <BsClockHistory />
                   <h5>Cook time</h5>
                   <p>{cookTime} mins</p>
-                </article>
+                </article> */}
                 <article>
                   <GiTakeMyMoney />
                   <h5>Price</h5>

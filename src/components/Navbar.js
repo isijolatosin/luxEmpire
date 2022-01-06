@@ -165,11 +165,13 @@ const Navbar = () => {
                   <div className="status">
                     {user === null ? (
                       <div onClick={() => dispatch(setLogin(true))}>
-                        <Link to="/">Login</Link>
+                        <Link to="/">
+                          <span className="login-logout">Login</span>
+                        </Link>
                       </div>
                     ) : (
                       <div onClick={handleLogout}>
-                        <span>Logout</span>
+                        <span className="login-logout">Logout</span>
                       </div>
                     )}
                   </div>
@@ -178,14 +180,9 @@ const Navbar = () => {
             </div>
           </div>
           <div className="nav-user">
-            {login === false && user ? (
+            {login === false && user && (
               <>
                 <p>Welcome, </p>
-                <span>{userInfo}</span>
-              </>
-            ) : (
-              <>
-                <p>You are logged out </p>
                 <span>{userInfo}</span>
               </>
             )}
@@ -217,11 +214,13 @@ const Navbar = () => {
                 setShowLinks(false)
               }}
             >
-              <Link to="/">Login</Link>
+              <Link to="/">
+                <span className="login-logout">Login</span>
+              </Link>
             </div>
           ) : (
             <div onClick={handleLogout}>
-              <span>Logout</span>
+              <span className="login-logout">Logout</span>
             </div>
           )}
         </div>

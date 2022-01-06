@@ -100,7 +100,7 @@ function SpaList({ spasData = [] }) {
                   </div>
                 ) : (
                   <div onClick={IncreaseItem} className="add-to-cart2">
-                    <span>ADD MORE |</span>
+                    <span>ADD MORE | </span>
                     <FiShoppingCart />
                     {icon === id && (
                       <div className={added ? "added added-show" : "added"}>

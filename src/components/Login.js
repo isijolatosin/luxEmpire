@@ -64,7 +64,7 @@ const Login = () => {
             <IoMdClose
               onClick={() => dispatch(setLogin(false))}
               size={25}
-              color="black"
+              color="white"
             />
           </div>
           <div className="login-page-header">

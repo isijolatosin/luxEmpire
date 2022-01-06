@@ -10,6 +10,7 @@ import { fetchFromAPI } from "./utils/helpers"
 import { BOOKINGS, USERS } from "../../const"
 import { clearCartItem, selectCartItems } from "../../slices/appSlices"
 import { useSelector, useDispatch } from "react-redux"
+import { Link } from "gatsby"
 // import { setBookingObject } from "../../slices/appSlices"
 
 function BookingPage() {
@@ -148,121 +149,129 @@ function BookingPage() {
   ]
 
   return (
-    <main className="booking-page">
-      {/* <div className="calendar-container"> */}
-      <div className="calendar-wrapper">
-        <div className="booking-title">
-          <h2>
-            Schedule your appointment <span>now!</span>
-          </h2>
-        </div>
-        <div>
-          <Calendar
-            color="#645cff"
-            date={new Date()}
-            onChange={handleSelect}
-            dateDisplayFormat="yyyy-MM-dd"
-            className="calendar"
-          />
-        </div>
-        <>
-          <div
-            className={selectDate ? "select selected-date" : "selected-date"}
-          >
-            <span>- You have selected {selectDate} -</span>
+    <main className="book-page-container">
+      <Link className="book-page-link" to="/">
+        Back home
+      </Link>
+      <div className="booking-page">
+        <div className="calendar-wrapper">
+          <div className="booking-title">
+            <h2>
+              Schedule your appointment <span> now!</span>
+            </h2>
           </div>
-          <span
-            className={
-              proceed ? "selected-proceed selected" : "selected-proceed"
-            }
-          >
-            You can proceed now
-          </span>
-        </>
-      </div>
-      {/* </div> */}
-      <div>
-        <div className="form-service">
-          <form className="booking-form" action="/action_page.php">
-            <div className="booking-form-label">
-              <label>Session</label>
-            </div>
-            <select
-              onChange={handleOnChange}
-              id="time"
-              value={bookingData.session}
-              name="session"
+          <div>
+            <Calendar
+              color="#1b1b1d"
+              date={new Date()}
+              onChange={handleSelect}
+              dateDisplayFormat="yyyy-MM-dd"
+              className="calendar"
+              backgroundColor="red"
+            />
+          </div>
+          <>
+            <div
+              className={selectDate ? "select selected-date" : "selected-date"}
             >
-              {sessions.map(session => (
-                <option key={session.id}>{session.name}</option>
-              ))}
-            </select>
-          </form>
-        </div>
-        <div className="form-service">
-          <form className="booking-form" action="/action_page.php">
-            <div className="booking-form-label">
-              <label>Category</label>
+              <span>- You have selected {selectDate} -</span>
             </div>
-            <select
-              onChange={handleOnChange}
-              id="category"
-              value={bookingData.category}
-              name="category"
+            <span
+              className={
+                proceed ? "selected-proceed selected" : "selected-proceed"
+              }
             >
-              {categories.map(category => (
-                <option key={category.id}>{category.name}</option>
-              ))}
-            </select>
-          </form>
+              You can proceed now
+            </span>
+          </>
         </div>
-        <div className="form-service">
-          <form className="booking-form" action="/action_page.php">
-            <div className="booking-form-label">
-              <label>Service</label>
+        <div className="right">
+          <div>
+            <div className="form-service">
+              <form className="booking-form" action="/action_page.php">
+                <div className="booking-form-label">
+                  <label>Session</label>
+                </div>
+                <select
+                  onChange={handleOnChange}
+                  id="time"
+                  value={bookingData.session}
+                  name="session"
+                >
+                  {sessions.map(session => (
+                    <option className="booking-select-option" key={session.id}>
+                      {session.name}
+                    </option>
+                  ))}
+                </select>
+              </form>
             </div>
-            <select
-              onChange={handleOnChange}
-              id="category"
-              value={bookingData.service}
-              name="service"
-            >
-              {services.map(service => (
-                <option key={service.id}>{service.name}</option>
-              ))}
-            </select>
-          </form>
-        </div>
-        <div className="form-service">
-          <form className="booking-form" action="/action_page.php">
-            <div className="booking-form-label">
-              <label>Personnel</label>
+            <div className="form-service">
+              <form className="booking-form" action="/action_page.php">
+                <div className="booking-form-label">
+                  <label>Category</label>
+                </div>
+                <select
+                  onChange={handleOnChange}
+                  id="category"
+                  value={bookingData.category}
+                  name="category"
+                >
+                  {categories.map(category => (
+                    <option key={category.id}>{category.name}</option>
+                  ))}
+                </select>
+              </form>
             </div>
-            <select
-              onChange={handleOnChange}
-              id="staff"
-              value={bookingData.personnel}
-              name="personnel"
-            >
-              {staffs.map(staff => (
-                <option key={staff.id}>{staff.name}</option>
-              ))}
-            </select>
-          </form>
-        </div>
-      </div>
-      <div>
-        <div>
-          {bookingData.personnel &&
-          bookingData.service &&
-          bookingData.category &&
-          bookingData.session ? (
-            <button onClick={redirectToCheckout} className="selected">
-              Submit Booking
-            </button>
-          ) : (
-            <button className="booking-button">Submit Booking</button>
-          )}
+            <div className="form-service">
+              <form className="booking-form" action="/action_page.php">
+                <div className="booking-form-label">
+                  <label>Service</label>
+                </div>
+                <select
+                  onChange={handleOnChange}
+                  id="category"
+                  value={bookingData.service}
+                  name="service"
+                >
+                  {services.map(service => (
+                    <option key={service.id}>{service.name}</option>
+                  ))}
+                </select>
+              </form>
+            </div>
+            <div className="form-service">
+              <form className="booking-form" action="/action_page.php">
+                <div className="booking-form-label">
+                  <label>Personnel</label>
+                </div>
+                <select
+                  onChange={handleOnChange}
+                  id="staff"
+                  value={bookingData.personnel}
+                  name="personnel"
+                >
+                  {staffs.map(staff => (
+                    <option key={staff.id}>{staff.name}</option>
+                  ))}
+                </select>
+              </form>
+            </div>
+          </div>
+          <div>
+            <div>
+              {bookingData.personnel &&
+              bookingData.service &&
+              bookingData.category &&
+              bookingData.session ? (
+                <button onClick={redirectToCheckout} className="selected">
+                  Submit Booking
+                </button>
+              ) : (
+                <button className="booking-button">Submit Booking</button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </main>
