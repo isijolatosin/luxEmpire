@@ -1166,6 +1166,9 @@ form > *:last-child {
   opacity: 0.2;
 } */
 @media screen and (min-width: 850px) {
+  .login {
+    margin-top: 90px;
+  }
   .contact-info img {
     width: 350px;
   }
