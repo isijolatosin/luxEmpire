@@ -92,13 +92,13 @@ const StripeCheckout = () => {
       // line items
       const line_items = cartItems.map(item => {
         const taxCal = item.price * TAX_PERCENT
-        const price = item.price + taxCal
+        const price = Math.floor((item.price + taxCal) * 100)
         const description = `${item.description.substring(0, 200)}...`
         return {
           quantity: item.quantity,
           price_data: {
             currency: CURRENCY,
-            unit_amount: price * 100, //amount is in center
+            unit_amount: price, //amount is in center
             product_data: {
               name: `${item.title} - (Estimated GST/HST: 13%)`,
               description: description,
